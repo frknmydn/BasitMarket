@@ -85,7 +85,7 @@ public class StockItem implements Comparable<StockItem>{
 
 	@Override
 	public int compareTo(StockItem o) {
-		System.out.println("Entering StockItem.compareTo");
+		
 		
 		if(this==o) {
 			return 0;
@@ -110,15 +110,15 @@ public class StockItem implements Comparable<StockItem>{
 	
 	public int reserveStock(int quantity) {
 		if(quantity>=availableQuantity()) {
-			reserved+= quantity; //metodun içindeki quantity sayısı kadar reserved'in içine ekleme yapılır
+			reserved+= quantity; //metodun iÃ§indeki quantity sayÃ½sÃ½ kadar reserved'in iÃ§ine ekleme yapÃ½lÃ½r
 			return quantity;
 		}
 		return 0;
 	}
 	
 	public int unreserveStock(int quantity) {
-		if(quantity<=reserved) { //Eğer unreserved edilecek sayı reserved'den azsa
-			reserved -= quantity; //metodun içindeki quantity sayısı kadar unreserved yapılacak. 
+		if(quantity<=reserved) { //EÃ°er unreserved edilecek sayÃ½ reserved'den azsa
+			reserved -= quantity; //metodun iÃ§indeki quantity sayÃ½sÃ½ kadar unreserved yapÃ½lacak. 
 			return quantity;
 		}
 		return 0;
@@ -140,7 +140,6 @@ public class StockItem implements Comparable<StockItem>{
 	@Override
 	public boolean equals(Object obj) {
 		
-		System.out.println("Entering StockItem.equals");
 		if(obj==this) {
 			return true;
 		}
@@ -169,7 +168,7 @@ public class StockItem implements Comparable<StockItem>{
 
 	@Override
 	public String toString() {
-		return this.name + " : değeri " + this.price + ". reserve sayısı: " + this.reserved;
+		return this.name + " : deÃ°eri " + this.price + ". reserve sayÃ½sÃ½: " + this.reserved;
 	}
 	
 	
