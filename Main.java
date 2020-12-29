@@ -37,7 +37,7 @@ public class Main {
 	        temp = new StockItem("vazo", 8.76, 40);
 	        stockList.addStock(temp);
 
-	        System.out.println(stockList); //toString metodunun tanımlanmış hali gelir.
+	        System.out.println(stockList); //toString metodunun tanÃ½mlanmÃ½Å£ hali gelir.
 
 	        for(String s: stockList.Items().keySet()) {
 	            System.out.println(s);
@@ -52,10 +52,10 @@ public class Main {
 	        System.out.println(furkansBasket);
 
 	        if(sellItem(furkansBasket, "kalem", 1) != 1) {
-	            System.out.println("Stoklarımızda daha fazla kalem bulunmamakta");
+	            System.out.println("StoklarÃ½mÃ½zda daha fazla kalem bulunmamakta");
 	        }
 
-	        sellItem(furkansBasket, "spanner", 5);
+	       
 
 
 	        sellItem(furkansBasket, "mevye suyu", 4);
@@ -78,14 +78,14 @@ public class Main {
 
 	        System.out.println(furkansBasket);
 
-	        // Bütün itemları liste içinden kaldırılması için.
+	        // BÃ¼tÃ¼n itemlarÃ½ liste iÃ§inden kaldÃ½rÃ½lmasÃ½ iÃ§in.
 	        removeItem(furkansBasket, "ekmek", 1);
 	        removeItem(furkansBasket, "kupa", 3);
 	        removeItem(furkansBasket, "meyve suyu", 4);
 	        removeItem(furkansBasket, "kupa", 3);
 	        System.out.println(furkansBasket);
 
-	        System.out.println("\stok listesinin checkout öncesi ve sonrası görüntüsü:");
+	        System.out.println("\stok listesinin checkout Ã¶ncesi ve sonrasÃ½ gÃ¶rÃ¼ntÃ¼sÃ¼:");
 	        System.out.println(basket);
 	        System.out.println(stockList);
 	        checkOut(basket);
