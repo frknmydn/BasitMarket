@@ -37,7 +37,7 @@ public class Main {
 	        temp = new StockItem("vazo", 8.76, 40);
 	        stockList.addStock(temp);
 
-	        System.out.println(stockList); //toString metodunun tanýmlanmýţ hali gelir.
+	        System.out.println(stockList); //toString metodunun tanımlanmış hali gelir.
 
 	        for(String s: stockList.Items().keySet()) {
 	            System.out.println(s);
@@ -52,10 +52,10 @@ public class Main {
 	        System.out.println(furkansBasket);
 
 	        if(sellItem(furkansBasket, "kalem", 1) != 1) {
-	            System.out.println("Stoklarýmýzda daha fazla kalem bulunmamakta");
+	            System.out.println("Stoklarımızda daha fazla kalem bulunmamakta");
 	        }
 
-	       
+	        sellItem(furkansBasket, "spanner", 5);
 
 
 	        sellItem(furkansBasket, "mevye suyu", 4);
@@ -78,14 +78,14 @@ public class Main {
 
 	        System.out.println(furkansBasket);
 
-	        // Bütün itemlarý liste içinden kaldýrýlmasý için.
+	        // Bütün itemları liste içinden kaldırılması için.
 	        removeItem(furkansBasket, "ekmek", 1);
 	        removeItem(furkansBasket, "kupa", 3);
 	        removeItem(furkansBasket, "meyve suyu", 4);
 	        removeItem(furkansBasket, "kupa", 3);
 	        System.out.println(furkansBasket);
 
-	        System.out.println("\stok listesinin checkout öncesi ve sonrasý görüntüsü:");
+	        System.out.println("\stok listesinin checkout öncesi ve sonrası görüntüsü:");
 	        System.out.println(basket);
 	        System.out.println(stockList);
 	        checkOut(basket);
@@ -118,9 +118,9 @@ public class Main {
 			return 0;
 		}
 		
-		if(stockList.sellStock(item, quantity)!=0) {
-			basket.addToBasket(stockItem, quantity);
-			return quantity;
+		if(stockList.reserveStock(item, quantity)!=0) {
+			
+			return basket.addToBasket(stockItem, quantity);
 		}
 		
 		return 0;
@@ -133,7 +133,7 @@ public class Main {
 		StockItem stockItem = stockList.get(item);
 		
 		if(stockItem==null) {
-			System.out.println("We don't sell " + item);
+			System.out.println(item+" Satışı yapılmıyor ");
 			return 0;
 		}
 		
